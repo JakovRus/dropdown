@@ -1,0 +1,19 @@
+@use "src/styles/colors" as *;
+
+.dropdown-overlay {
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    padding: 8px;
+
+    background-color: $black500;
+    font-size: 16px;
+    color: $white100;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $blue100;
+    }
+  }
+}

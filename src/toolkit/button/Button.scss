@@ -1,0 +1,11 @@
+@use "src/styles/colors" as *;
+
+.app-button {
+  background-color: $black500;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $blue100;
+  }
+}

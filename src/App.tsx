@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useCallback } from 'react';
+import './App.scss';
+import { Dropdown } from "./toolkit";
+import { IDropdownItem } from "./toolkit/dropdown/types";
+
+const items: IDropdownItem[] = [
+  {
+    label: "Rename",
+    value: '1',
+  },
+  {
+    label: "Delete",
+    value: '2',
+  },
+  {
+    label: "Share",
+    value: '3',
+  },
+];
 
 function App() {
+  const onItemClick = useCallback((value) => {
+    console.log(value);
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Dropdown overlayPosition="bottomLeft" trigger="hover" items={items} onItemClick={onItemClick} />
     </div>
   );
 }
